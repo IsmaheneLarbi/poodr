@@ -1,12 +1,11 @@
 require_relative 'wheel'
 
 class Gear
-  attr_reader :chainring, :cog, :rim, :tire
-  def initialize(chainring, cog, rim, tire)
-    # this technique creates a new wheel everytime a gear is created
+  attr_reader :chainring, :cog, :wheel
+  def initialize(chainring, cog, wheel)
     @chainring = chainring
     @cog = cog
-    @wheel = Wheel.new(rim, tire)
+    @wheel = wheel
   end
 
   def ratio
