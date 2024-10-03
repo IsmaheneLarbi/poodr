@@ -41,14 +41,14 @@
   5. Provide default values
   6. Reverse dependency:    
     > Depend on things that change less often than you do
-    How to choose what to depend upon ?
-    1. Some classes are more likely than others to have changes in requirements:
+  How to choose what to depend upon ?
+  1. Some classes are more likely than others to have changes in requirements:
 
-      Your code changes > Your framework's > Ruby base classes' (array, string, int...)
-    2. Concrete classes are more likely to change than abstract classes
-      Depending on a class that calls diameter is better than 
-      depending on a Wheel instance specifically. It allows us to respond to any object that calls .diameter
-    3. Changing a class that has many dependents will result in widespread consequences.
-      A class with dependents will be under enormous pressure not to change, you will try to bypass making changes and your app will suffer.
+    Your code changes > Your framework's > Ruby base classes' (array, string, int...)
+  2. Concrete classes are more likely to change than abstract classes
+    Depending on a class that calls diameter is better than 
+    depending on a Wheel instance specifically. It allows us to respond to any object that calls .diameter
+  3. Changing a class that has many dependents will result in widespread consequences.
+    A class with dependents will be under enormous pressure not to change, you will try to bypass making changes and your app will suffer.
 
   ![alt](./image.png)
