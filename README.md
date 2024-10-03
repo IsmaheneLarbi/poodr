@@ -40,7 +40,9 @@
       Use a hash
     5. Provide default values
     6. Reverse dependency:
+      
       > Depend on things that change less often than you do
+
       How to choose what to depend upon ?
       1. Some classes are more likely than others to have changes in requirements:
       
@@ -51,4 +53,4 @@
       3. Changing a class that has many dependents will result in widespread consequences.
         A class with dependents will be under enormous pressure not to change, you will try to bypass making changes and your app will suffer.
 
-        ![Likelihood of classes to change](ch3_likelihood_of_change_vs_dependents.png)
+        ![alt](./image.png)
