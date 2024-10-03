@@ -28,29 +28,27 @@
   A class should know **just enough** to do its job and nothing more.
 
   ### Techniques that reduce dependency:
-    1. Dependency injection:
+  1. Dependency injection:
       Creating the dependencies of a class (rim, tire) outside of a class(Gear). These dependencies will be injected into the class through 
       1. constructor injection (Wheel.new(rim, tire))
       2. getter/setter injection
       3. interface injection
-    2. Isolate instance creation:
+  2. Isolate instance creation:
       If you can't inject a class into another (wheel as a parameter to Gear.new), isolate it within the class, that way you expose the dependency while reducing its reach into the class.
-    3. Isolate message in its own method
-    4. Remove argument order dependency
-      Use a hash
-    5. Provide default values
-    6. Reverse dependency:
-      
-      > Depend on things that change less often than you do
+  3. Isolate message in its own method
+  4. Remove argument order dependency
+    Use a hash
+  5. Provide default values
+  6. Reverse dependency:    
+    > Depend on things that change less often than you do
+    How to choose what to depend upon ?
+    1. Some classes are more likely than others to have changes in requirements:
 
-      How to choose what to depend upon ?
-      1. Some classes are more likely than others to have changes in requirements:
-      
-        Your code changes > Your framework's > Ruby base classes' (array, string, int...)
-      2. Concrete classes are more likely to change than abstract classes
-        Depending on a class that calls diameter is better than 
-        depending on a Wheel instance specifically. It allows us to respond to any object that calls .diameter
-      3. Changing a class that has many dependents will result in widespread consequences.
-        A class with dependents will be under enormous pressure not to change, you will try to bypass making changes and your app will suffer.
+      Your code changes > Your framework's > Ruby base classes' (array, string, int...)
+    2. Concrete classes are more likely to change than abstract classes
+      Depending on a class that calls diameter is better than 
+      depending on a Wheel instance specifically. It allows us to respond to any object that calls .diameter
+    3. Changing a class that has many dependents will result in widespread consequences.
+      A class with dependents will be under enormous pressure not to change, you will try to bypass making changes and your app will suffer.
 
-        ![alt](./image.png)
+  ![alt](./image.png)
